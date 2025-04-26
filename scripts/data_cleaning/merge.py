@@ -55,4 +55,4 @@ concatenated_df["Sentences"] = concatenated_df["Dialogues"].apply(lambda dialogu
 concatenated_df["Words"] = concatenated_df["Dialogues"].apply(lambda x: sum(len(dialogue.split()) for dialogue in x))
 
 # Save the dataframe
-concatenated_df.to_csv('data/dialogue_data.csv', index=False)
+concatenated_df.to_csv('data/all/dialogue_data.csv', index=False)

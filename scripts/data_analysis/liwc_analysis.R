@@ -3,7 +3,7 @@ library(tidyverse)
 library(broom)
 
 # Load the dataset
-df <- read_csv("data/liwc_data.csv", show_col_types = FALSE)
+df <- read_csv("data/all/liwc_data.csv", show_col_types = FALSE)
 
 # Rename variables
 df <- df %>%

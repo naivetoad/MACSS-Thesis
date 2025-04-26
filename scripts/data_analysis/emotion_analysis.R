@@ -8,7 +8,7 @@ library(proxy)
 library(reshape2)
 
 # Load the dataset
-df <- read_csv("data/emotion_data.csv", show_col_types = FALSE)
+df <- read_csv("data/all/emotion_data.csv", show_col_types = FALSE)
 
 # Function to extract dominant emotions
 extract_dominant_emotions <- function(emotion_list_str) {

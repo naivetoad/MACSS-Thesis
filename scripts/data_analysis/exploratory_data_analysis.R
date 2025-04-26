@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # Load the dataset
-df <- read_csv("data/dialogue_data.csv", show_col_types = FALSE)
+df <- read_csv("data/all/dialogue_data.csv", show_col_types = FALSE)
 
 # Summarize statistics
 summary_df <- df %>%

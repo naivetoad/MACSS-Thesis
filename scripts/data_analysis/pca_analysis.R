@@ -3,7 +3,7 @@ library(tidyverse)
 library(jsonlite)
 
 # Load the emotion dataset
-emotion_df <- read_csv("data/emotion_data.csv", show_col_types = FALSE)
+emotion_df <- read_csv("data/all/emotion_data.csv", show_col_types = FALSE)
 
 # Define emotion categories
 emotion_categories <- c("anger", "joy")
@@ -40,7 +40,7 @@ emotion_df <- emotion_df %>%
   mutate(across(all_of(emotion_categories), ~ .x / LineCount))
 
 # Load the liwc dataset
-liwc_df <- read_csv("data/liwc_data.csv", show_col_types = FALSE)
+liwc_df <- read_csv("data/all/liwc_data.csv", show_col_types = FALSE)
 
 # Rename variables
 liwc_df <- liwc_df %>%

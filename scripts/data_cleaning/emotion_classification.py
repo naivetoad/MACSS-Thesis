@@ -8,7 +8,7 @@ from transformers import set_seed
 from transformers import utils
 
 # Load the dataset
-df = pd.read_csv("data/dialogue_data.csv",converters={"Dialogues": ast.literal_eval})
+df = pd.read_csv("data/all/dialogue_data.csv",converters={"Dialogues": ast.literal_eval})
 
 # Set the seed for reproducibility
 set_seed(42)
@@ -30,4 +30,4 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
     df.at[index, "Emotions"] = json.dumps(emotion_scores)
 
 # Save the dataframe
-df.to_csv('data/emotion_data.csv', index=False)
+df.to_csv('data/all/emotion_data.csv', index=False)
