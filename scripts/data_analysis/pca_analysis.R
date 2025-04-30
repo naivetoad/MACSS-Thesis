@@ -88,7 +88,7 @@ pca_points <- as.data.frame(pca_result$x) %>%
 
 pca_points <- pca_points %>%
   mutate(Franchise = case_when(
-    grepl("Elder Scrolls", Title) ~ "Elder Scrolls",
+    grepl("Elder Scrolls", Title) ~ "The Elder Scrolls",
     grepl("Final Fantasy", Title) ~ "Final Fantasy",
     grepl("Persona", Title) ~ "Persona",
     grepl("Horizon", Title) ~ "Horizon",
@@ -129,7 +129,8 @@ ggplot(pca_points, aes(x = PC1, y = PC2)) +
   geom_point(data = centroids, aes(x = PC1, y = PC2, shape = Gender, color = Franchise), 
              size = 4) +
   geom_segment(data = loadings, aes(x = 0, y = 0, xend = PC1, yend = PC2),
-               arrow = arrow(length = unit(0.3, "cm")), color = "black") +
+               lineend = "round", linejoin = "round", linewidth = 1.2,
+               arrow = arrow(length = unit(0.4, "cm")), color = "black") +
   geom_text(data = loadings, aes(x = label_x, y = label_y, label = variable),
             size = 4, color = "black") +
   coord_cartesian(xlim = c(-1, 1), ylim = c(-1, 1)) +
