@@ -1,4 +1,4 @@
-# Gender Differences in Psychological States in Role-Playing Video Game Dialogue
+# Gender Representation of Psychosocial Factors in Role-Playing Video Game Dialogue
 
 ## Project Overview
 
