@@ -11,65 +11,6 @@ analysis, transformer-based emotion classification, and dimensionality reduction
 ## Repository Structure
 
 ```
-├── data
-│   ├── all
-│   │   ├── dialogue_data.csv               # merged dialogue data
-│   │   ├── emotion_data.csv                # data from emotion classifcaiton
-│   │   └── liwc_data.csv                   # data from liwc analysis
-│   ├── death_stranding
-│   │   ├── data.csv                        # cleaned dialogue data from Death Stranding
-│   │   └── data.json                       # raw dialogue data from Death Stranding
-│   ├── disco_elysium
-│   │   ├── data.csv                        # cleaned dialogue data from Disco Elysium
-│   │   └── data.json                       # raw dialogue data from Disco Elysium
-│   ├── elder_scrolls_morrowind
-│   │   ├── data.csv                        # cleaned dialogue data from Elder Scrolls Morrowind
-│   │   └── data.json                       # raw dialogue data from Elder Scrolls Morrowind
-│   ├── elder_scrolls_oblivion
-│   │   ├── data.csv                        # cleaned dialogue data from Elder Scrolls Oblivion
-│   │   └── data.json                       # raw dialogue data from Elder Scrolls Oblivion
-│   ├── elder_scrolls_skyrim
-│   │   ├── data.csv                        # cleaned dialogue data from Elder Scrolls Skyrim
-│   │   └── data.json                       # raw dialogue data from Elder Scrolls SKyrim
-│   ├── final_fantasy_vii_remake
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy VII Remake
-│   │   └── data.json                       # raw dialogue data from Final Fantasy VII Remake
-│   ├── final_fantasy_x
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy X
-│   │   └── data.json                       # raw dialogue data from Final Fantasy X
-│   ├── final_fantasy_xii
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy XII
-│   │   └── data.json                       # raw dialogue data from Final Fantasy XII
-│   ├── final_fantasy_xiii
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy XIII
-│   │   └── data.json                       # raw dialogue data from Final Fantasy XIII
-│   ├── final_fantasy_xiii_2
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy XIII-2
-│   │   └── data.json                       # raw dialogue data from Final Fantasy XIII-2
-│   ├── final_fantasy_xiv
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy XIV
-│   │   └── data.json                       # raw dialogue data from
-│   ├── final_fantasy_xv
-│   │   ├── data.csv                        # cleaned dialogue data from Final Fantasy XV
-│   │   └── data.json                       # raw dialogue data from Final Fantasy XV
-│   ├── hades
-│   │   ├── data.csv                        # cleaned dialogue data from Hades
-│   │   └── data.json                       # raw dialogue data from Hades
-│   ├── horizon_forbidden_west
-│   │   ├── data.csv                        # cleaned dialogue data from Horizon Forbidden West
-│   │   └── data.json                       # raw dialogue data from Horizon Forbidden West
-│   ├── horizon_zero_dawn
-│   │   ├── data.csv                        # cleaned dialogue data from Horizon Zero Dawn
-│   │   └── data.json                       # raw dialogue data from Horizon Zero Dawn
-│   ├── persona_3
-│   │   ├── data.csv                        # cleaned dialogue data from Persona 3
-│   │   └── data.json                       # raw dialogue data from Persona 3
-│   ├── persona_4
-│   │   ├── data.csv                        # cleaned dialogue data from Persona 4
-│   │   └── data.json                       # raw dialogue data from Persona 4
-│   └── persona_5
-│       ├── data.csv                        # cleaned dialogue data from Persona 5
-│       └── data.json                       # raw dialogue data from Persona 5
 ├── figures 
 │   ├── emotion_distribution.pdf            # figure on the distribution of emotions
 │   ├── emotion_frequency.pdf               # figure on the frequency of emotions
@@ -119,20 +60,21 @@ cd MACSS-Thesis
 ```bash
 pip install pandas tqdm transformers
 ```
-5. Clean data for each game (replace {game_title} with a specific game's folder name).
+5. Download raw data at https://github.com/seannyD/VideoGameDialogueCorpusPublic.
+6. Clean data for each game (replace {game_title} with a specific game's folder name).
 ```bash
 python3 scripts/data_cleaning/{game_title}.py
 ```
-6. Merge cleaned data from all games.
+7. Merge cleaned data from all games.
 ```bash
 python3 scripts/data_cleaning/merge.py
 ```
-7. Perform emotion classification on merged data.
+8. Perform emotion classification on merged data.
 ```bash
 python3 scripts/data_cleaning/emotion_classification.py
 ```
-8. Download and install the latest releases of R and RStudio from the official [website](https://posit.co/download/rstudio-desktop/).
-9. Install R libraries.
+9. Download and install the latest releases of R and RStudio from the official [website](https://posit.co/download/rstudio-desktop/).
+10. Install R libraries.
 ```r
 install.packages(c(
   "broom",
@@ -144,11 +86,11 @@ install.packages(c(
   "tidyverse"
 ))
 ```
-9. Change the working directory (replace {file_path} with the path to the folder where you cloned the repository).
+11. Change the working directory (replace {file_path} with the path to the folder where you cloned the repository).
 ```r
 setwd("{file_path}/MACSS-Thesis")
 ```
-10. Perform exploratory data analysis by running ```exploratory_data_analysis.R```.
-11. Perform analysis on emotion variables by running ```emotion_analysis.R```.
-12. Perform analysis on LIWC variables by running ```liwc_analysis.R```.
-13. Perform PCA on emotion and LIWC variables by running ```pca_analysis.R```.
+12. Perform exploratory data analysis by running ```exploratory_data_analysis.R```.
+13. Perform analysis on emotion variables by running ```emotion_analysis.R```.
+14. Perform analysis on LIWC variables by running ```liwc_analysis.R```.
+15. Perform PCA on emotion and LIWC variables by running ```pca_analysis.R```.
